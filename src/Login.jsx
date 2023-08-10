@@ -1,29 +1,44 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Container, Typography, Box, Card } from '@mui/material';
 
 const Login = ({ setNickname }) => {
   const [nicknameInput, setNicknameInput] = useState('');
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     setNickname(nicknameInput);
-    navigate('/chat'); // 페이지 이동
+    navigate('/chat');
   };
 
   return (
-    <div>
-      <h1>닉네임을 입력하세요.</h1>
-      <TextField
-        label="닉네임"
-        variant="outlined"
-        value={nicknameInput}
-        onChange={e => setNicknameInput(e.target.value)}
-      />
-      <Button variant="contained" color="primary" onClick={handleLogin}>
-        접속
-      </Button>
-    </div>
+      <Container maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <Card sx={{ textAlign: 'center', p:3 }}>
+          <Typography variant="subtitle1" mb={2}>
+            닉네임을 입력하세요.
+          </Typography>
+          <form onSubmit={handleLogin}>
+            <Box
+              sx={{ mb: 2 }}
+              color='#fff'
+              >
+              <TextField
+                label="닉네임"
+                variant="outlined"
+                fullWidth
+                value={nicknameInput}
+                onChange={(e) => setNicknameInput(e.target.value)}
+              />
+            </Box>
+            <Box>
+              <Button fullWidth variant="contained" color="primary" type="submit">
+                접속
+              </Button>
+            </Box>
+          </form>
+        </Card>
+      </Container>
   );
 };
 

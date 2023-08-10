@@ -1,0 +1,858 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; box-sizing: border-box; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----- // reset.css ----- */
+
+
+/* ----- Variable ----- */
+
+:root {
+  --point-color: #e06b74;
+  --subpoint-color: #6b9ae0;
+  --global-bg: #282c34;
+  --global-bg-hover: #3e4451;
+  --scroll-bg: #e06b74;
+  --scroll-bg-track: #ffdde0;
+  --scroll-bg-hover: #ec5561;
+}
+
+html {
+  background-color: var(--global-bg);
+}
+
+/* ----- // Variable ----- */
+
+
+/* ----- Scroll bar ----- */
+
+*::-webkit-scrollbar {
+  width: 12px;
+  /* 스크롤바의 너비 */
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--scroll-bg-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bg);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-bg-hover);
+}
+
+/* ----- // Scroll bar ----- */
+
+
+/* ----- basic ----- */
+
+html {
+  font-family: 'NEXON Lv1 Gothic OTF', sans-serif;
+  font-weight: 300;
+  word-break: keep-all;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.bold100 {
+  font-weight: 100;
+}
+
+.bold200 {
+  font-weight: 200;
+}
+
+.bold300 {
+  font-weight: 300;
+}
+
+.bold400 {
+  font-weight: 400;
+}
+
+.bold500 {
+  font-weight: 500;
+}
+
+.bold600 {
+  font-weight: 600;
+}
+
+.bold700 {
+  font-weight: 700;
+}
+
+.bold800 {
+  font-weight: 800;
+}
+
+.bold900 {
+  font-weight: 900;
+}
+
+/* ----- // basic ----- */
+
+
+/* ----- margin & padding ----- */
+
+.m-auto {
+  margin: auto
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-5 {
+  margin-top: 0.3125rem;
+}
+
+.mt-10 {
+  margin-top: 0.625rem;
+}
+
+.mt-15 {
+  margin-top: 0.9375rem;
+}
+
+.mt-20 {
+  margin-top: 1.250rem;
+}
+
+.mt-25 {
+  margin-top: 1.5625rem;
+}
+
+.mt-30 {
+  margin-top: 1.875rem;
+}
+
+.mt-35 {
+  margin-top: 2.1875rem;
+}
+
+.mt-40 {
+  margin-top: 2.500rem;
+}
+
+.mt-45 {
+  margin-top: 2.8125rem;
+}
+
+.mt-50 {
+  margin-top: 3.125rem;
+}
+
+.mt-60 {
+  margin-top: 3.750rem;
+}
+
+.mt-70 {
+  margin-top: 4.375rem;
+}
+
+.mt-80 {
+  margin-top: 5.000rem;
+}
+
+.mt-90 {
+  margin-top: 5.625rem;
+}
+
+.mt-100 {
+  margin-top: 6.250rem;
+}
+
+.mt-120 {
+  margin-top: 7.500rem;
+}
+
+.mt-130 {
+  margin-top: 8.125rem;
+}
+
+.mt-140 {
+  margin-top: 8.75rem;
+}
+
+.mt-150 {
+  margin-top: 9.375rem;
+}
+
+.mt-160 {
+  margin-top: 10.000rem;
+}
+
+.mt-180 {
+  margin-top: 11.25rem;
+}
+
+.mt-200 {
+  margin-top: 12.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-5 {
+  margin-bottom: 0.3125rem;
+}
+
+.mb-10 {
+  margin-bottom: 0.625rem;
+}
+
+.mb-15 {
+  margin-bottom: 0.9375rem;
+}
+
+.mb-20 {
+  margin-bottom: 1.250rem;
+}
+
+.mb-25 {
+  margin-bottom: 1.5625rem;
+}
+
+.mb-30 {
+  margin-bottom: 1.875rem;
+}
+
+.mb-35 {
+  margin-bottom: 2.1875rem;
+}
+
+.mb-40 {
+  margin-bottom: 2.500rem;
+}
+
+.mb-45 {
+  margin-bottom: 2.8125rem;
+}
+
+.mb-50 {
+  margin-bottom: 3.125rem;
+}
+
+.mb-60 {
+  margin-bottom: 3.750rem;
+}
+
+.mb-70 {
+  margin-bottom: 4.375rem;
+}
+
+.mb-80 {
+  margin-bottom: 5.000rem;
+}
+
+.mb-90 {
+  margin-bottom: 5.625rem;
+}
+
+.mb-100 {
+  margin-bottom: 6.250rem;
+}
+
+.mb-120 {
+  margin-bottom: 7.500rem;
+}
+
+.mb-130 {
+  margin-bottom: 8.125rem;
+}
+
+.mb-140 {
+  margin-bottom: 8.75rem;
+}
+
+.mb-150 {
+  margin-bottom: 9.375rem;
+}
+
+.mb-200 {
+  margin-bottom: 12.5rem;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mr-5 {
+  margin-right: 0.3125rem;
+}
+
+.mr-10 {
+  margin-right: 0.625rem;
+}
+
+.mr-15 {
+  margin-right: 0.9375rem;
+}
+
+.mr-20 {
+  margin-right: 1.250rem;
+}
+
+.mr-25 {
+  margin-right: 1.5625rem;
+}
+
+.mr-30 {
+  margin-right: 1.875rem;
+}
+
+.mr-35 {
+  margin-right: 2.1875rem;
+}
+
+.mr-40 {
+  margin-right: 2.500rem;
+}
+
+.mr-45 {
+  margin-right: 2.8125rem;
+}
+
+.mr-50 {
+  margin-right: 3.125rem;
+}
+
+.mr-60 {
+  margin-right: 3.750rem;
+}
+
+.mr-70 {
+  margin-right: 4.375rem;
+}
+
+.mr-80 {
+  margin-right: 5.000rem;
+}
+
+.mr-90 {
+  margin-right: 5.625rem;
+}
+
+.mr-100 {
+  margin-right: 6.250rem;
+}
+
+.mr-120 {
+  margin-right: 7.500rem;
+}
+
+.mr-140 {
+  margin-right: 8.750rem;
+}
+
+.mr-200 {
+  margin-right: 12.50rem;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.ml-5 {
+  margin-left: 0.3125rem;
+}
+
+.ml-10 {
+  margin-left: 0.625rem;
+}
+
+.ml-15 {
+  margin-left: 0.9375rem;
+}
+
+.ml-20 {
+  margin-left: 1.250rem;
+}
+
+.ml-25 {
+  margin-left: 1.5625rem;
+}
+
+.ml-30 {
+  margin-left: 1.875rem;
+}
+
+.ml-35 {
+  margin-left: 2.1875rem;
+}
+
+.ml-40 {
+  margin-left: 2.500rem;
+}
+
+.ml-45 {
+  margin-left: 2.8125rem;
+}
+
+.ml-50 {
+  margin-left: 3.125rem;
+}
+
+.ml-60 {
+  margin-left: 3.750rem;
+}
+
+.ml-70 {
+  margin-left: 4.375rem;
+}
+
+.ml-80 {
+  margin-left: 5.000rem;
+}
+
+.ml-90 {
+  margin-left: 5.625rem;
+}
+
+.ml-100 {
+  margin-left: 6.250rem;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important
+}
+
+.pl-0 {
+  padding-left: 0 !important
+}
+
+.pt-5 {
+  padding-top: 0.3125rem;
+}
+
+.pt-10 {
+  padding-top: 0.625rem;
+}
+
+.pt-15 {
+  padding-top: 0.9375rem;
+}
+
+.pt-20 {
+  padding-top: 1.250rem;
+}
+
+.pt-25 {
+  padding-top: 1.5625rem;
+}
+
+.pt-30 {
+  padding-top: 1.875rem;
+}
+
+.pt-35 {
+  padding-top: 2.1875rem;
+}
+
+.pt-40 {
+  padding-top: 2.500rem;
+}
+
+.pt-45 {
+  padding-top: 2.8125rem;
+}
+
+.pt-50 {
+  padding-top: 3.125rem;
+}
+
+.pt-60 {
+  padding-top: 3.750rem;
+}
+
+.pt-70 {
+  padding-top: 4.375rem;
+}
+
+.pt-80 {
+  padding-top: 5.000rem;
+}
+
+.pt-90 {
+  padding-top: 5.625rem;
+}
+
+.pt-100 {
+  padding-top: 6.250rem;
+}
+
+.pt-120 {
+  padding-top: 7.500rem;
+}
+
+.pt-130 {
+  padding-top: 8.125rem;
+}
+
+.pt-140 {
+  padding-top: 8.75rem;
+}
+
+.pt-150 {
+  padding-top: 9.375rem;
+}
+
+.pt-240 {
+  padding-top: 15rem;
+}
+
+.pb-5 {
+  padding-bottom: 0.3125rem;
+}
+
+.pb-10 {
+  padding-bottom: 0.625rem;
+}
+
+.pb-15 {
+  padding-bottom: 0.9375rem;
+}
+
+.pb-20 {
+  padding-bottom: 1.250rem;
+}
+
+.pb-25 {
+  padding-bottom: 1.5625rem;
+}
+
+.pb-30 {
+  padding-bottom: 1.875rem;
+}
+
+.pb-35 {
+  padding-bottom: 2.1875rem;
+}
+
+.pb-40 {
+  padding-bottom: 2.500rem;
+}
+
+.pb-45 {
+  padding-bottom: 2.8125rem;
+}
+
+.pb-50 {
+  padding-bottom: 3.125rem;
+}
+
+.pb-60 {
+  padding-bottom: 3.750rem;
+}
+
+.pb-70 {
+  padding-bottom: 4.375rem;
+}
+
+.pb-80 {
+  padding-bottom: 5.000rem;
+}
+
+.pb-90 {
+  padding-bottom: 5.625rem;
+}
+
+.pb-100 {
+  padding-bottom: 6.250rem;
+}
+
+.pb-120 {
+  padding-bottom: 7.500rem;
+}
+
+.pb-130 {
+  padding-bottom: 8.125rem;
+}
+
+.pb-140 {
+  padding-bottom: 8.75rem;
+}
+
+.pb-150 {
+  padding-bottom: 9.375rem;
+}
+
+.pr-5 {
+  padding-right: 0.3125rem;
+}
+
+.pr-10 {
+  padding-right: 0.625rem;
+}
+
+.pr-15 {
+  padding-right: 0.9375rem;
+}
+
+.pr-20 {
+  padding-right: 1.250rem;
+}
+
+.pr-25 {
+  padding-right: 1.5625rem;
+}
+
+.pr-30 {
+  padding-right: 1.875rem;
+}
+
+.pr-35 {
+  padding-right: 2.1875rem;
+}
+
+.pr-40 {
+  padding-right: 2.500rem;
+}
+
+.pr-45 {
+  padding-right: 2.8125rem;
+}
+
+.pr-50 {
+  padding-right: 3.125rem;
+}
+
+.pr-60 {
+  padding-right: 3.750rem;
+}
+
+.pr-70 {
+  padding-right: 4.375rem;
+}
+
+.pr-80 {
+  padding-right: 5.000rem;
+}
+
+.pr-90 {
+  padding-right: 5.625rem;
+}
+
+.pr-100 {
+  padding-right: 6.250rem;
+}
+
+.pr-120 {
+  padding-right: 7.500rem;
+}
+
+.pl-5 {
+  padding-left: 0.3125rem;
+}
+
+.pl-10 {
+  padding-left: 0.625rem;
+}
+
+.pl-15 {
+  padding-left: 0.9375rem;
+}
+
+.pl-20 {
+  padding-left: 1.250rem;
+}
+
+.pl-25 {
+  padding-left: 1.5625rem;
+}
+
+.pl-30 {
+  padding-left: 1.875rem;
+}
+
+.pl-35 {
+  padding-left: 2.1875rem;
+}
+
+.pl-40 {
+  padding-left: 2.500rem;
+}
+
+.pl-45 {
+  padding-left: 2.8125rem;
+}
+
+.pl-50 {
+  padding-left: 3.125rem;
+}
+
+.pl-60 {
+  padding-left: 3.750rem;
+}
+
+.pl-70 {
+  padding-left: 4.375rem;
+}
+
+.pl-80 {
+  padding-left: 5.000rem;
+}
+
+.pl-90 {
+  padding-left: 5.625rem;
+}
+
+.pl-100 {
+  padding-left: 6.250rem;
+}
+
+.pl-120 {
+  padding-left: 7.500rem;
+}
+
+/* ----- // margin & padding ----- */
+
+
+/* ----- Common Layout ----- */
+
+button {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #969696;
+  color: #333;
+  border-radius: .25em;
+  padding: 1em .5em;
+  font-family: inherit;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+/* 커서가 있을 경우에 */
+@media (hover: hover) {
+  button:hover {
+    background-color: var(--point-color);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  .subpoint-button:hover {
+      background-color: var(--subpoint-color);
+  }
+}
+
+button:active {
+  background-color: var(--point-color);
+  color: #fff;
+  border-color: transparent;
+}
+
+.subpoint-button:active {
+    background-color: var(--subpoint-color);
+}
+
+
+.purple-color {
+  color: #c678dd;
+}
+
+.red-color {
+  color: #e06c75;
+}
+
+.orange-color {
+  color: #d19a66;
+}
+
+.green-color {
+  color: #98c379;
+}
+
+/* ----- Common Layout ----- */

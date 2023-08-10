@@ -34,6 +34,8 @@ io.on('connection', (socket) => {
       timestamp: new Date(),
     });
 
+    console.log(chatMessage);
+
     try {
       await chatMessage.save();
       console.log('Message saved successfully');
