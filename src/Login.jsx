@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Container, Typography, Box, Card } from '@mui/material';
 
-const Login = ({ setNickname }) => {
+/* redux */
+import { useDispatch } from 'react-redux';
+import { setNickname } from './redux/actions';
+
+const Login = () => {
   const [nicknameInput, setNicknameInput] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    nicknameInput === '' ? alert('닉네임을 입력하세요.') : navigateToChat();
+  };
+
+  const navigateToChat = () => {
+    dispatch(setNickname(nicknameInput));
+    localStorage.setItem('nickname', nicknameInput);
     setNickname(nicknameInput);
     navigate('/chat');
   };
@@ -15,9 +26,6 @@ const Login = ({ setNickname }) => {
   return (
       <Container maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
         <Card sx={{ textAlign: 'center', p:3 }}>
-          <Typography variant="subtitle1" mb={2}>
-            닉네임을 입력하세요.
-          </Typography>
           <form onSubmit={handleLogin}>
             <Box
               sx={{ mb: 2 }}

@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+/* material */
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { purple, deepPurple } from '@mui/material/colors';
+
+/* Router */
 import Login from './Login';
 import Chat from './Chat';
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
-    mode: 'dark', // 다크 모드 활성화
+    primary: {
+      main: deepPurple[400],
+    },
   },
 });
 
@@ -15,7 +21,7 @@ const App = () => {
   const [nickname, setNickname] = useState('');
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
           <Route
