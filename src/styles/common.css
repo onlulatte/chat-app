@@ -23,13 +23,13 @@ a {
 /* ----- Variable ----- */
 
 :root {
-  --point-color: #e06b74;
+  --point-color: #7e57c2;
   --subpoint-color: #6b9ae0;
   --global-bg: #cdcbff;
   --global-bg-hover: #3e4451;
-  --scroll-bg: #e06b74;
-  --scroll-bg-track: #ffdde0;
-  --scroll-bg-hover: #ec5561;
+  --scroll-bg: #7e57c2;
+  --scroll-bg-track: #d1c4e9;
+  --scroll-bg-hover: #5e35b1;
 }
 
 html {

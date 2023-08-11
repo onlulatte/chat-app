@@ -4,7 +4,10 @@
   margin-bottom: 10px;
 
   &-area {
+    height: 600px;
+    overflow-y: auto;
     margin-bottom: 20px;
+    padding-right: 10px;
   }
 
   &:last-of-type {
@@ -64,4 +67,11 @@
 
 .right-msg .msg-img {
   margin: 0 0 0 10px;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 40px;
+  border-radius: 50%;
+  border: 2px solid #333;
 }

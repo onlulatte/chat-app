@@ -24,29 +24,29 @@ const Login = () => {
   };
 
   return (
-      <Container maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-        <Card sx={{ textAlign: 'center', p:3 }}>
-          <form onSubmit={handleLogin}>
-            <Box
-              sx={{ mb: 2 }}
-              color='#fff'
-              >
-              <TextField
-                label="닉네임"
-                variant="outlined"
-                fullWidth
-                value={nicknameInput}
-                onChange={(e) => setNicknameInput(e.target.value)}
-              />
-            </Box>
-            <Box>
-              <Button fullWidth variant="contained" color="primary" type="submit">
-                접속
-              </Button>
-            </Box>
-          </form>
-        </Card>
-      </Container>
+    <Container maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+      <Card sx={{ textAlign: 'center', p: 3 }}>
+        <form onSubmit={handleLogin}>
+          <Box sx={{ mb: 2 }}>
+            <Typography variant="h4" sx={{ mb: 2 }}>
+              React Chat
+            </Typography>
+            <TextField
+              label="닉네임"
+              variant="outlined"
+              fullWidth
+              value={nicknameInput}
+              onChange={(e) => setNicknameInput(e.target.value)}
+            />
+          </Box>
+          <Box>
+            <Button fullWidth variant="contained" color="primary" type="submit">
+              접속
+            </Button>
+          </Box>
+        </form>
+      </Card>
+    </Container>
   );
 };
 

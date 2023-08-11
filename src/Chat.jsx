@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Chat.scss';
 import { io } from 'socket.io-client';
-import { Container, TextField, Button, Typography, Card, List, ListItem } from '@mui/material';
+import { Container, TextField, Button, Typography, Card, Grid } from '@mui/material';
 
 /* redux */
 import { useSelector } from 'react-redux';
@@ -49,19 +49,26 @@ const Chat = (props) => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Card sx={{ padding: 3 }}>
-        <Typography variant="h4" gutterBottom>
-          Welcome, {nickname}!
-        </Typography>
+    <Container maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Card sx={{ width: '100%', padding: 3, borderRadius: 5 }}>
+      <Grid container spacing={1} sx={{ mb: 2, alignItems: 'center' }}>
+        <Grid item xs={2}>
+          <img src="/profile.jpg" alt="프로필 사진" className="profile-img" />
+        </Grid>
+        <Grid item xs={10}>
+          <Typography variant="h5">
+            {nickname}님, 반갑습니다!
+          </Typography>
+        </Grid>
+      </Grid>
         <form onSubmit={handleSendClick}>
           <div className="msg-area">
             {chatHistory.map((chat, index) => (
-              <div key={index} className="msg right-msg">
+              <div key={index} className={`msg ${chat.user === nickname ? 'right-msg' : 'left-msg'}`}>
                 <div className="msg-bubble">
                   <div className="msg-bubble-header">
                     <span className="user-name">{chat.user}</span>
-                    <span className="msg-time">{chat.time}</span>
+                    <span className="msg-time">{ chat.time || new Date(chat.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }) }</span>
                   </div>
                   <div className="msg-bubble-content">
                     <span className="msg-content">{chat.text}</span>
@@ -70,17 +77,22 @@ const Chat = (props) => {
               </div>
             ))}
           </div>
-          <TextField
-            fullWidth
-            variant="outlined"
-            type="text"
-            value={message}
-            onChange={handleInputChange}
-            sx={{ mb: 2 }}
-          />
-          <Button variant="contained" color="primary" type="submit">
-            전송
-          </Button>
+          <Grid container spacing={1}>
+            <Grid item xs={10}>
+              <TextField
+                fullWidth
+                variant="outlined"
+                type="text"
+                value={message}
+                onChange={handleInputChange}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              <Button variant="contained" color="primary" type="submit" sx={{ width: '100%', height: '100%' }}>
+                전송
+              </Button>
+            </Grid>
+          </Grid>
         </form>
       </Card>
     </Container>

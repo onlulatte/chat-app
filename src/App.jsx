@@ -15,6 +15,12 @@ const theme = createTheme({
       main: deepPurple[400],
     },
   },
+  typography: {
+    fontFamily: [
+      'NEXON Lv1 Gothic OTF',
+      'sans-serif'
+    ].join(','),
+  }
 });
 
 const App = () => {
