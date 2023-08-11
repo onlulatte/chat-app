@@ -1,12 +1,16 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-const mongoose = require('mongoose'); // mongoose 추가
+const mongoose = require('mongoose');
 const Chat = require('./models/chatModel');
+const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+
+// Route 연결
+app.use('/', chatRoutes);
 
 // MongoDB 연결 코드
 mongoose.connect('mongodb://localhost:27017/mydatabase', {
@@ -26,7 +30,7 @@ io.on('connection', (socket) => {
   console.log('New client connected');
   
   socket.on('chat message', async (msg) => {
-    console.log('Received message:', msg);
+    // console.log('Received message:', msg);
 
     const chatMessage = new Chat({
       user: msg.user,
