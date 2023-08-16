@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Chat.scss';
 import { io } from 'socket.io-client';
 import { Container, TextField, Button, Typography, Card, Grid } from '@mui/material';
@@ -18,6 +18,15 @@ const Chat = (props) => {
     setMessage(e.target.value);
   };
 
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatHistory]);
+
   useEffect(() => {
     // 기존 채팅 내역을 가져오기
     fetch('http://localhost:3001/chat')
@@ -30,9 +39,14 @@ const Chat = (props) => {
       });
 
     // 새 메시지를 입력하면 채팅 내역을 업데이트
-    socket.on('chat message', (msg) => {
+    // socket.on('chat message', (msg) => {
+    //   console.log(msg);
+    //   setChatHistory(prevChatHistory => [...prevChatHistory, msg]); // 기존 채팅 내역을 사용하여 상태를 업데이트
+    // });
+
+    socket.on('new chat message', (msg) => {
       console.log(msg);
-      setChatHistory(prevChatHistory => [...prevChatHistory, msg]); // 기존 채팅 내역을 사용하여 상태를 업데이트
+      setChatHistory(prevChatHistory => [...prevChatHistory, msg]);
     });
 
     return () => {
@@ -44,7 +58,7 @@ const Chat = (props) => {
     const newMessage = { user: nickname, text: message, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }) };
     e.preventDefault();
     socket.emit('chat message', newMessage); // 서버에 메시지 전송
-    setChatHistory([...chatHistory, newMessage]);
+    // setChatHistory([...chatHistory, newMessage]);
     setMessage('');
   };
 
@@ -76,6 +90,7 @@ const Chat = (props) => {
                 </div>
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
           <Grid container spacing={1}>
             <Grid item xs={10}>

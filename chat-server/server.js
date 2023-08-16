@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
 
     try {
       await chatMessage.save();
-      console.log('Message saved successfully');
+      io.emit('new chat message', chatMessage);  // 모든 클라이언트에게 새 메시지 전송
     } catch (err) {
       console.log(err);
     }
